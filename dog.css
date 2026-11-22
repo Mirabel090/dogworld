@@ -1,0 +1,559 @@
+/* ===== 1. RESET & BASE ===== */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Cambria, Georgia, serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+/* ===== 2. NAVBAR ===== */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0.8rem 5%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: whitesmoke;
+    font-style: italic;
+    white-space: nowrap;
+}
+
+.logo i {
+    color: orange;
+    font-size: 28px;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+nav ul li a {
+    color: whitesmoke;
+    font-size: 1.05rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: orange;
+}
+
+.btn {
+    background: orange;
+    color: whitesmoke;
+    padding: 0.7rem 1.5rem;
+    border-radius: 10px;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #e69500;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle i {
+    color: orange;
+    font-size: 28px;
+}
+
+/* ===== 3. HERO ===== */
+.frist-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 7rem 8% 3rem;
+    color: white;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+        url("./img/img (1).jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.frist-section h2 {
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    line-height: 1.15;
+    margin-bottom: 20px;
+    max-width: 700px;
+}
+
+.frist-section p {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-weight: bold;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+.us,
+.me {
+    display: inline-block;
+    padding: 0.9rem 2.2rem;
+    border-radius: 10px;
+    color: whitesmoke;
+    font-weight: bold;
+    margin: 0 10px 10px 0;
+    transition: transform 0.3s ease;
+}
+
+.us {
+    background: orange;
+    border: 2px solid orange;
+}
+
+.me {
+    border: 2px solid rgb(199, 191, 191);
+}
+
+.us:hover,
+.me:hover {
+    transform: translateY(-3px);
+}
+
+/* ===== 4. ABOUT ===== */
+.about {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 100px 8%;
+}
+
+.about-image,
+.about-text {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.about-text h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 25px;
+}
+
+.about-text p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.about-text .we {
+    display: inline-block;
+    background: orange;
+    color: whitesmoke;
+    padding: 1rem 2.5rem;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+
+/* ===== 5. BREEDS ===== */
+.breed {
+    padding: 100px 8%;
+    background: rgb(248, 242, 230);
+}
+
+.breed-text {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.breed-text h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 15px;
+}
+
+.breed-text p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+}
+
+.breed-card {
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    padding-bottom: 10px;
+}
+
+.breed-card img {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+}
+
+.breed-card h2 {
+    padding: 20px 20px 10px;
+}
+
+.breed-card p {
+    padding: 0 20px;
+    color: #666;
+}
+
+.breed-card a {
+    display: inline-block;
+    margin: 20px;
+    background: #ffb703;
+    color: whitesmoke;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-weight: bolder;
+}
+
+/* ===== 6. SERVICES ===== */
+.service {
+    text-align: center;
+    padding: 100px 8% 60px;
+}
+
+.service-text {
+    margin-bottom: 50px;
+}
+
+.service-text h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+}
+
+.service-card {
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    padding: 3rem 1.5rem;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+}
+
+.service-card h2 {
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #666;
+}
+
+/* ===== 7. CONTACT ===== */
+.contact {
+    display: flex;
+    gap: 50px;
+    padding: 80px 8%;
+}
+
+.contact-card,
+.from-container {
+    flex: 1;
+}
+
+.contact-card h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 25px;
+}
+
+.contact-text {
+    color: #666;
+    line-height: 2;
+}
+
+.contact-text i {
+    color: orange;
+    margin-right: 8px;
+}
+
+.contact-text a {
+    color: #666;
+}
+
+.from-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-from {
+    margin-bottom: 20px;
+}
+
+.from-container input,
+.from-container textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #999;
+    border-radius: 10px;
+    outline: none;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.from-container input:focus,
+.from-container textarea:focus {
+    border-color: orange;
+}
+
+.from-container textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.what {
+    width: 100%;
+    padding: 1rem;
+    background: orange;
+    color: whitesmoke;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.what:hover {
+    background: #e69500;
+}
+
+.form-message {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.form-message.success {
+    color: green;
+}
+
+.form-message.error {
+    color: crimson;
+}
+
+/* ===== 8. FOOTER ===== */
+.footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    background: rgb(63, 55, 55);
+    padding: 3rem 8%;
+}
+
+.footer-1 {
+    color: whitesmoke;
+    text-align: center;
+}
+
+.footer-1 h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.footer-1 h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.footer-1 p,
+.footer-1 li {
+    line-height: 2;
+    font-weight: bold;
+}
+
+.footer-1 a {
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.footer-1 a:hover {
+    color: orange;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social i {
+    color: orange;
+    font-size: 26px;
+}
+
+.copy {
+    text-align: center;
+    background: rgb(63, 55, 55);
+    color: whitesmoke;
+    font-weight: bolder;
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 1rem;
+}
+
+/* ===== 9. RESPONSIVE ===== */
+
+/* Tablets */
+@media (max-width: 992px) {
+    nav ul {
+        gap: 18px;
+    }
+
+    .about {
+        gap: 40px;
+    }
+
+    .contact {
+        gap: 30px;
+    }
+}
+
+/* Phones and small tablets */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .btn {
+        display: none;
+    }
+
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        background: rgba(0, 0, 0, 0.92);
+        text-align: center;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 1rem;
+    }
+
+    .frist-section {
+        text-align: center;
+        justify-content: center;
+        padding: 7rem 5% 3rem;
+    }
+
+    .frist-section h2,
+    .frist-section p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about {
+        flex-direction: column;
+        padding: 70px 5%;
+        text-align: center;
+    }
+
+    .about-image img {
+        height: 300px;
+    }
+
+    .breed {
+        padding: 70px 5%;
+    }
+
+    .breed-card img {
+        height: 280px;
+    }
+
+    .service {
+        padding: 70px 5% 40px;
+    }
+
+    .contact {
+        flex-direction: column;
+        padding: 70px 5%;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.25rem;
+    }
+
+    .us,
+    .me {
+        display: block;
+        margin: 0 auto 12px;
+        max-width: 250px;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
